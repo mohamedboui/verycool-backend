@@ -10,7 +10,7 @@
     <artifactId>core</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>core</name>
-    <description>the business layer for verycool</description>
+    <description>the business layer for verycool-backend</description>
     <packaging>jar</packaging>
     <properties>
         <assertj.version>3.27.2</assertj.version>

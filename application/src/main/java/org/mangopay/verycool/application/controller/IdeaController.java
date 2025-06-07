@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/ideas")
-@RequestMapping(path = "/ideas")
+@RestController
+@RequestMapping(path = "/api/ideas")
 public class IdeaController {
     private final IdeaUseCaseAdapter ideaUseCaseAdapter;
 

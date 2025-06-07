@@ -6,9 +6,7 @@ import org.mangopay.verycool.core.domain.provider.TagProvider;
 import org.mangopay.verycool.dataprovider.mapper.IdeaMapper;
 import org.mangopay.verycool.dataprovider.model.IdeaEntity;
 import org.mangopay.verycool.dataprovider.repository.IdeaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

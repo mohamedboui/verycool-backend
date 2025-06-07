@@ -2,7 +2,6 @@ package org.mangopay.verycool.dataprovider.provider;
 
 import org.mangopay.verycool.core.domain.model.Tag;
 import org.mangopay.verycool.core.domain.provider.TagProvider;
-import org.mangopay.verycool.dataprovider.repository.TagRepository;
 
 import java.util.HashMap;
 import java.util.List;
@@ -39,7 +38,8 @@ public class InMemoryTagDatabaseProvider implements TagProvider {
                 .stream()
                 .filter(entry -> tags.contains(entry.getKey()))
                 .map(Map.Entry::getValue)
-                .toList();    }
+                .toList();
+    }
 
 
 }

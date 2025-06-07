@@ -39,7 +39,7 @@ public class TagControllerITTest {
                   "name": "The name of the tag"
                 }
                 """;
-        return this.mvc.perform(post("/tags")
+        return this.mvc.perform(post("/api/tags")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(payload)
         );

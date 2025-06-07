@@ -64,7 +64,7 @@ public class IdeaControllerITTest {
                     }
                   ]
                 }""";
-        return this.mvc.perform(post("/ideas")
+        return this.mvc.perform(post("/api/ideas")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(payload)
         );
@@ -77,7 +77,7 @@ public class IdeaControllerITTest {
                 .getResponse()
                 .getContentAsString();
         IdeaDTO idea = objectMapper.readValue(ideaAsJson, IdeaDTO.class);
-        this.mvc.perform(get("/ideas"))
+        this.mvc.perform(get("/api/ideas"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].title", is("The title of the idea")))
                 .andExpect(jsonPath("$[0].description", is("The description of the idea")))

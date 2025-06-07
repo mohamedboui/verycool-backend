@@ -1,0 +1,70 @@
+ 1. What technologies would you choose?
+For this task, I chose to implement the backend using Spring Boot due to its robustness, ease of integration with other technologies, and wide adoption in enterprise environments.
+
+I followed a hexagonal (clean) architecture to ensure the application remains modular, testable, and easy to maintain.
+
+I used Spring Data JPA for data access, MapStruct for DTO mapping, and Lombok to reduce boilerplate. For validation, I used Jakarta Bean Validation (@Valid). The API is exposed via REST controllers following RESTful conventions.
+
+ 2. What database(s) would you choose?
+I chose PostgreSQL because it's a reliable, production-grade relational database that integrates well with Spring Boot through Spring Data JPA.
+
+During local development and testing, PostgreSQL can be easily run using Docker, and for integration tests, it can be replaced with Testcontainers or H2 in PostgreSQL compatibility mode if needed.
+
+3. What considerations would you make when building the API?
+Several key considerations guided the design of the API:
+
+Simplicity and clarity: Followed REST conventions and used standard HTTP methods and status codes.
+
+Validation: Added request validation to ensure input data integrity.
+
+Error handling: Implemented global exception handling using @ControllerAdvice to return meaningful error messages.
+
+Scalability: Used DTOs to decouple domain and API layers and facilitate versioning.
+
+Clean architecture: Ensured separation between domain logic and infrastructure for better maintainability and testing.
+
+4. How would you handle security of the API?
+For this MVP, authentication and authorization were considered out of scope. However, in a real-world application, I would secure the API using JWT-based authentication with Spring Security.
+
+Each endpoint would require a valid access token, and user roles would be enforced via annotations like @PreAuthorize. HTTPS would also be enforced to secure data in transit.
+
+If federated identity is needed, integration with Keycloak or an OAuth2 provider would be the next step.
+
+5. Write the Slack message you would send to the frontend developer explaining how to use the API
+
+The backend API for managing ideas  and tags on VeryCool-backend is ready
+
+Here are the main endpoints:
+
+GET /api/ideas – Returns the list of all ideas
+
+POST /api/ideas – Adds a new idea
+
+POST /api/tags – Adds a new tag
+
+        * Example payload for creating a new idea:
+        {
+          "title": "New Idea Title",
+          "description": "This is an awesome idea."
+        }
+        * Example payload for creating a new tag:
+        {
+          "name": "Name of the tag"
+        }
+        * Example of the list of ideas returned
+         [
+           {
+             "id": 1,
+             "title": "title1",
+             "description": "desc1",
+             "tags": [
+               {
+                 "id": 1,
+                 "name": "tag1"
+               }
+             ]
+           }
+         ]
+
+all endpoints return JSON responses. Input is validated, and any errors will be returned with proper HTTP status codes and messages.
+There is the link if you of  the swagger : http://localhost:8080/swagger-ui/index.html
