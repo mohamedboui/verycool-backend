@@ -16,7 +16,7 @@
 
     <modules>
         <module>core</module>
-        <module>data-provider</module>
+        <module>dataprovider</module>
         <module>application</module>
     </modules>
     <build>

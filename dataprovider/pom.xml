@@ -7,9 +7,9 @@
         <artifactId>verycool-backend</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>data-provider</artifactId>
+    <artifactId>dataprovider</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>data-provider</name>
+    <name>dataprovider</name>
     <description>database provider for the Application</description>
     <properties>
         <spring-boot.version>3.4.5</spring-boot.version>

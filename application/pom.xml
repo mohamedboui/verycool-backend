@@ -25,7 +25,7 @@
         </dependency>
         <dependency>
             <groupId>org.mangopay</groupId>
-            <artifactId>data-provider</artifactId>
+            <artifactId>dataprovider</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
