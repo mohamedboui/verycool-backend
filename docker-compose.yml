@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: mangopayuser
+      POSTGRES_PASSWORD: mangopaypass
+      POSTGRES_DB: verycool-backend
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - type: bind
+        source: ./init_db.sql
+        target: /docker-entrypoint-initdb.d/init_db.sql
+
+    ports:
+      - "5432:5432"
+
+volumes:
+  pgdata:
